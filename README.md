@@ -1,6 +1,6 @@
-# food_scan
+# foodScan
 
-A new Flutter application.
+A Flutter application which scan your food.
 
 ## Getting Started
 
