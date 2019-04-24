@@ -1,4 +1,4 @@
-# foodScan
+# FoodScan
 
 A Flutter application which scan your food.
 
