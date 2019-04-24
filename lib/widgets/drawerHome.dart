@@ -13,7 +13,7 @@ class DrawerHome extends Drawer {
             accountName: new Text("Quentin SAUVETRE"),
             accountEmail: new Text("apps@quentin-sauvetre.fr"),
             currentAccountPicture: CircleAvatar(
-              child: FlutterLogo(),
+              child: Image.asset('lib/images/logoFoodScan.png')//FlutterLogo(),
               //backgroundColor: Colors.blue,
             ),
             otherAccountsPictures: <Widget>[

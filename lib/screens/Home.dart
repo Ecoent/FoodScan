@@ -73,6 +73,19 @@ class HomePageState extends State<HomePage> {
                       ],
                     ),
                   ),
+                  new Container(
+                    padding: const EdgeInsets.all(16.0),
+                    alignment: Alignment.center,
+                    decoration: debug ? new CustomBoxDecoration() : null,
+                    child: new Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: <Widget>[
+                        Flexible(
+                          child: Text("Avertissement: la base de données peut être incomplète ou erronnée, elle est maintenue par OpenFoodFacts ainsi que ses utilisateurs.\nVous pouvez aussi y contribuer en corrigeant ou en ajoutant des produits !"),
+                        ),
+                      ],
+                    ),
+                  )
 
                 ],
               ),
