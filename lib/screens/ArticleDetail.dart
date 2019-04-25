@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'package:food_scan/styles/customText.dart';
 import 'package:food_scan/styles/customBoxDecoration.dart';
-import 'package:cached_network_image/cached_network_image.dart';
+//import 'package:cached_network_image/cached_network_image.dart';
 
 class Url {
   final String url;
@@ -53,11 +53,11 @@ class _ArticleState extends State<Article> {
       if ( data["product"]["nutrition_grades"]!=null) {
         nutriScoreData = data["product"]["nutrition_grades"].toUpperCase();
         // NUSTRISCORE IMAGE
-        if (nutriScoreData == 'A') { nutriScorePath = "lib/data/images/nutriscore-a.png"; }
-        else if (nutriScoreData == 'B') { nutriScorePath = "lib/images/nutriscore-b.png"; }
-        else if (nutriScoreData == 'C') { nutriScorePath = "lib/images/nutriscore-c.png"; }
-        else if (nutriScoreData == 'D') { nutriScorePath = "lib/images/nutriscore-d.png"; }
-        else if (nutriScoreData == 'E') { nutriScorePath = "lib/images/nutriscore-e.png"; }
+        if (nutriScoreData == 'A') { nutriScorePath = "lib/images/nutriscore-a.png"; }
+        else if (nutriScoreData == 'B') { nutriScorePath = "lib/nutriscore-b.png"; }
+        else if (nutriScoreData == 'C') { nutriScorePath = "lib/nutriscore-c.png"; }
+        else if (nutriScoreData == 'D') { nutriScorePath = "lib/nutriscore-d.png"; }
+        else if (nutriScoreData == 'E') { nutriScorePath = "lib/nutriscore-e.png"; }
       }
       else {
         nutriScorePath = null;

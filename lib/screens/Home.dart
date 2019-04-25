@@ -7,7 +7,7 @@ import 'package:food_scan/styles/customText.dart';
 import 'package:food_scan/styles/customBoxDecoration.dart';
 import 'package:food_scan/screens/ArticleDetail.dart';
 import 'package:food_scan/widgets/drawerHome.dart';
-
+import 'package:connectivity/connectivity.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -19,6 +19,19 @@ class HomePage extends StatefulWidget {
 class HomePageState extends State<HomePage> {
   String result = "";
   bool debug = false;
+  bool connected = false;
+
+  initState() {
+    super.initState();
+    this.verifyConnectivity();
+  }
+
+  Future<void> verifyConnectivity() async {
+    var connectivityResult = await (Connectivity().checkConnectivity());
+     if (connectivityResult == ConnectivityResult.mobile || connectivityResult == ConnectivityResult.wifi) {
+       connected = true;
+     }
+  }
 
   Future _scanQR() async {
     try {
@@ -85,18 +98,29 @@ class HomePageState extends State<HomePage> {
                         ),
                       ],
                     ),
+                  ),
+                  new Container(
+                    padding: const EdgeInsets.all(16.0),
+                    alignment: Alignment.center,
+                    decoration: debug ? new CustomBoxDecoration() : null,
+                    child: new Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: <Widget>[
+                        Flexible(
+                          child: Text("L'application nécessite d'être connectée au réseau pour fonctionner.\nDans une future version un contrôle sera effectué."),
+                        ),
+                      ],
+                    ),
                   )
-
                 ],
               ),
             ]
         ),
       ),
-
       floatingActionButton: FloatingActionButton.extended(
         icon: Icon(Icons.camera_alt),
         label: Text("Scan"),
-        onPressed: _scanQR,
+        onPressed:  _scanQR,
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
     );

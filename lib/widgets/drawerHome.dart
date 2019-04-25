@@ -13,7 +13,7 @@ class DrawerHome extends Drawer {
             accountName: new Text("Quentin SAUVETRE"),
             accountEmail: new Text("apps@quentin-sauvetre.fr"),
             currentAccountPicture: CircleAvatar(
-              child: Image.asset('lib/images/logoFoodScan.png')//FlutterLogo(),
+              child: Image.asset('lib/images/logoFoodScan.png'),
               //backgroundColor: Colors.blue,
             ),
             otherAccountsPictures: <Widget>[
@@ -61,7 +61,7 @@ class DrawerHome extends Drawer {
 
   _launchMail() async {
     await launch(
-        'mailto:apps@quentin-sauvetre.fr?subject=Information&body=Hi Quentin,\n\n');
+        'mailto:apps@quentin-sauvetre.fr?subject=Information about Food Scan&body=Hi Quentin,\n\n');
   }
 
   _launchWebsite() async {
