@@ -4,7 +4,8 @@ import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'package:food_scan/styles/customText.dart';
 import 'package:food_scan/styles/customBoxDecoration.dart';
-//import 'package:cached_network_image/cached_network_image.dart';
+///import 'package:cached_network_image/cached_network_image.dart';
+
 
 class Url {
   final String url;
